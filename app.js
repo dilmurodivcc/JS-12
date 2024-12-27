@@ -1,20 +1,27 @@
+
+
+
 function m1() {
-  const input = document.getElementById("inputValue").value;
-  const arr = input.trim().split(" ");
-  const uniq = [];
-  for (let i = 0; i < arr.length; i++) {
-    let count = 0;
-    for (let j = 0; j < arr.length; j++) {
-      if (arr[i] === arr[j]) {
-        count++;
-      }
-    }
-    if (count === 1) {
-      uniq.push(arr[i]);
-    }
+  const a = +document.getElementById("inputValue").value;
+  const b = +document.getElementById("inputValue-1").value;
+  const c = +document.getElementById("inputValue-2").value;
+
+  function digitSum(K) {
+    if (K === 0) return false; 
+    return (K % 10) + digitSum(Math.floor(K / 10));
   }
-  document.getElementById("output").innerHTML = uniq.join(", ");
+  function totalSum(a, b, c) {
+    return digitSum(a) + digitSum(b) + digitSum(c);
+  }
+  document.getElementById(
+    "output"
+  ).innerHTML = `Raqamlar yig'indisi: ${totalSum(a, b, c)}`;
 }
+
+
+
+
+
 
 function m2() {
   const input = document.getElementById("inputValue2").value;

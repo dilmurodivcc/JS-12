@@ -27,32 +27,24 @@ function m2() {
   ).innerHTML = `Fibonachining ${n}-elementi: ${Fib1(n)}`;
 }
 
-
-
-
 function m3() {
-  const input = document.getElementById("inputValue3").value;
-  const arr = input.trim().split(" ").map(Number);
-  let juft = 0;
-  let toq = 0;
-  for (let i = 0; i < arr.length; i++) {
-    const son = arr[i];
-    if (son % 2 === 0) {
-      juft++;
-      toq = 0;
-    } else {
-      toq++;
-      juft = 0;
-    }
-    if (juft === 3)
-      return (document.getElementById("output3").innerHTML =
-        "3 ta Juft ketma-ket");
-    if (toq === 3)
-      return (document.getElementById("output3").innerHTML =
-        "3 ta Toq ketma-ket");
+  const num1 = +document.getElementById("inputValue3").value;
+  const num2 = +document.getElementById("inputValue3-1").value;
+  const num3 = +document.getElementById("inputValue3-2").value;
+  function Fact(N) {
+    if (N === 1 || N === 0) return 1; 
+    return N * Fact(N - 1); 
   }
-  document.getElementById("output3").innerHTML = "Unday emas";
+  const fact1 = Fact(num1);
+  const fact2 = Fact(num2);
+  const fact3 = Fact(num3);
+  document.getElementById("output3").innerHTML = `
+    ${num1}! = ${fact1} <br>
+    ${num2}! = ${fact2} <br>
+    ${num3}! = ${fact3}
+  `;
 }
+
 
 // SOME FUNCTION -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 

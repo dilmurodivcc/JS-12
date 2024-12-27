@@ -1,13 +1,10 @@
-
-
-
 function m1() {
   const a = +document.getElementById("inputValue").value;
   const b = +document.getElementById("inputValue-1").value;
   const c = +document.getElementById("inputValue-2").value;
 
   function digitSum(K) {
-    if (K === 0) return false; 
+    if (K === 0) return false;
     return (K % 10) + digitSum(Math.floor(K / 10));
   }
   function totalSum(a, b, c) {
@@ -18,23 +15,20 @@ function m1() {
   ).innerHTML = `Raqamlar yig'indisi: ${totalSum(a, b, c)}`;
 }
 
-
-
-
-
-
 function m2() {
-  const input = document.getElementById("inputValue2").value;
-  const arr = input.trim().split(" ").map(Number);
-  let tub = arr.filter((son) => {
-    if (son < 2) return false;
-    for (let i = 2; i < son; i++) {
-      if (son % i === 0) return false;
-    }
-    return true;
-  });
-  document.getElementById("output2").innerHTML = tub.join(", ");
+  const n = +document.getElementById("inputValue2").value;
+  function Fib1(n) {
+    if (n === 1 || n === 2) return 1;
+    return Fib1(n - 2) + Fib1(n - 1); 
+  }
+
+  document.getElementById(
+    "output2"
+  ).innerHTML = `Fibonachining ${n}-elementi: ${Fib1(n)}`;
 }
+
+
+
 
 function m3() {
   const input = document.getElementById("inputValue3").value;
